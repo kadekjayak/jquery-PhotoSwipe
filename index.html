@@ -1,0 +1,80 @@
+
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery Photoswipe</title>
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+		<!-- Photoswipe CSS -->
+		<link rel="stylesheet" href="assets/css/photoswipe.css">
+		<link rel="stylesheet" href="assets/css/default-skin/default-skin.css">
+
+		<!-- jQuery -->
+		<script type="text/javascript" src="assets/js/jquery-1.11.3.js"></script>
+		
+		<!-- Photoswipe Core -->
+		<script type="text/javascript" src="assets/js/photoswipe.min.js"></script>
+		<script type="text/javascript" src="assets/js/photoswipe-ui-default.min.js"></script>
+
+		<!-- Photoswipe Wrapper -->
+		<script type="text/javascript" src="jquery-PhotoSwipe/jquery.photoSwipe.js"></script>
+
+
+		<style type="text/css">
+			a {
+				display: block;
+			}
+			.image-container .item {
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<h1 class="page-header">Photoswipe Example</h1>
+			<div class="row image-container">
+				<div class="col-md-6 main-image item">
+					<a href="#" data-original-url="assets/img/1.jpg" data-original-width="1920" data-original-height="1080">
+						<img src="assets/img/1.jpg" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-6 item">
+							<a href="#" data-original-url="assets/img/2.jpg" data-original-width="1920" data-original-height="1080">
+								<img src="assets/img/2.jpg" class="img-responsive">
+							</a>
+						</div>
+						<div class="col-md-6 item">
+							<a href="#" data-original-url="assets/img/3.jpg" data-original-width="1920" data-original-height="1080">
+								<img src="assets/img/3.jpg" class="img-responsive">
+							</a>
+						</div>
+						<div class="col-md-6 item">
+							<a href="#" data-original-url="assets/img/4.jpg" data-original-width="1920" data-original-height="1080">
+								<img src="assets/img/4.jpg" class="img-responsive">
+							</a>
+						</div>
+						<div class="col-md-6 item">
+							<a href="#" data-original-url="assets/img/5.jpg" data-original-width="1920" data-original-height="1080">
+								<img src="assets/img/5.jpg" class="img-responsive">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			/**
+			* this is how to attach the click listerner the plugin
+			**/
+			$(document).ready(function(){
+				$('.image-container').photoSwipe({
+					itemSelector: '.item > a'
+				});
+			});
+		</script>
+	</body>
+</html>
