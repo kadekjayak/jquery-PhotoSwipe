@@ -83,8 +83,7 @@
                 var options = {
                     index: itemIndex,
 					getThumbBoundsFn: function(index) {
-						console.log($(itemElements[itemIndex]).children().get(0));
-			            var thumbnail = $(itemElements[itemIndex]).children().get(0),
+			            var thumbnail = itemElements[itemIndex],
 			                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
 			                rect = thumbnail.getBoundingClientRect(); 
 
