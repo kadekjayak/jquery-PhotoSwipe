@@ -31,6 +31,7 @@
 			counterEl: true,
 			arrowEl: true,
 			preloaderEl: true,
+			responsive: false,
 			shareButtons: [
 				{id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
 				{id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
@@ -91,9 +92,9 @@
 						return coor;
 			        }
                 };
-				console.log(plugin.settings);
+				
 				plugin.settings = $.extend({}, plugin.settings, options);
-				console.log(plugin.settings);
+				
                 
 				// Initializes and opens PhotoSwipe
                 var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, plugin.settings);
@@ -130,18 +131,21 @@
 				    }
 
 				    imageSrcWillChange = false;
+
 				});
 
 				gallery.listen('gettingData', function(index, item) {
-				    if( useLargeImages ) {
-						item.src = item.original.src;
-				        item.w = item.original.w;
-				        item.h = item.original.h;
-				    } else {
-				        item.src = item.thumb.src;
-				        item.w = item.thumb.w;
-				        item.h = item.thumb.h;
-				    }
+			    
+					item.src = item.original.src;
+			        item.w = item.original.w;
+			        item.h = item.original.h;
+			    
+			    	if ( plugin.settings.responsive == true && typeof item.thumb.w != 'undefined' && typeof item.thumb.h != 'undefined') {
+			    		item.src = item.thumb.src;
+			        	item.w = item.thumb.w;
+			        	item.h = item.thumb.h;
+			    	}
+				    
 				});
 
                 gallery.init();
